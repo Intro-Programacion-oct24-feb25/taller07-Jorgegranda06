@@ -18,68 +18,69 @@ public class JavaApplication6 {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
-        String cadenaReporte = "";
-        String nombreJugador;
+
+        String reporte = " ";
+        String reporteB = " ";
+        String reporteFinal = " ";
+        String nombre;
         String posicionCampo;
-
-        int edad;
-        double estatura;
-        
-        boolean bandera = true;
         String salir;
-        // variable acumuladoras
+        int edad;
+        int contador = 0;
+        double estatura;
+        boolean ciclo = true;
         int sumaEdades = 0;
+        double sumaEstatura = 0;
+        double promedioE;
+        double promedioT;
 
-       
-        // variables para promedio
-        double promedioEdad;
-        double promedioEstatura;
-        cadenaReporte = String.format("%s%s\n", cadenaReporte,
-                "Listado de Jugadores, Lista de edades\n"
-                        + "Promedio de edades :\nPromedio de estaturas :\n");
+        reporte = String.format("Listado de jugadores\n",
+                reporte);
+        reporteB = String.format("Listado de edades\n", reporteB);
 
-        while(bandera){
-            System.out.println("Ingrese el nombre del Jugador: ");
-            nombreJugador = entrada.nextLine();
-            
-            System.out.println("Ingrese la posición del jugador: ");
+        while (ciclo) {
+            System.out.println("Ingrese nombre del jugador");
+            nombre = entrada.nextLine();
+            System.out.println("Ingrese posicion del jugador");
             posicionCampo = entrada.nextLine();
-            
-            System.out.println("Ingrese la edad del Jugador: ");
+            System.out.println("Ingrese edad del jugador");
             edad = entrada.nextInt();
-            
-            System.out.println("Ingrese la estatura del Jugador: ");
+            System.out.println("Ingrese estatura del jugador");
             estatura = entrada.nextDouble();
             entrada.nextLine();
 
-            // agrego una iteración
-            sumaEdades = sumaEdades + 1; // primera(0+1=1)
-            promedioEdad = sumaEdades/edad;
-            
+            sumaEdades = sumaEdades + edad;
+            sumaEstatura = sumaEstatura + estatura;
+            contador = contador + 1;
+            promedioE = sumaEdades / contador;
+            promedioT = sumaEstatura / contador;
 
-            // Ejmplo 1. Alexander Dominguez -Arquero-, edad 32, estatura 1.95
-            cadenaReporte = String.format("%s%d.) %s\n",
-                    cadenaReporte,
-                    sumaEdades,
-                    nombreJugador,
+            reporte = String.format("%s%d._ %s -%s-,edad %d,estatura %.2f\n",
+                    reporte,
+                    contador,
+                    nombre,
                     posicionCampo,
                     edad,
                     estatura);
+            reporteB = String.format("%s%d\n",
+                    reporteB,
+                    edad);
 
-            // entrada.nextLine(); //
-            System.out.println("Desea salir del ciclo; digite: si");
+            reporteFinal = String.format("%s%sPromedio de edades: %.2f\n"
+                    + "Promedio de estaturas: %.2f",
+                    reporte,
+                    reporteB,
+                    promedioE,
+                    promedioT);
+            System.out.println("Desea salir del ciclo? Ingrese si");
             salir = entrada.nextLine();
-            if(salir.equals("si")||salir.equals("s")||
-                    salir.equals("yes")|| salir.equals("si") ){
-                bandera = false;
+            if (salir.equals("si") || salir.equals("SI") || salir.equals("Si")) {
+                ciclo = false;
             }
         }
-
-
-        // presentación de cadena final
-        System.out.printf("%s\n", cadenaReporte);
-
+        System.out.printf("%s\n", reporteFinal);
     }
+
 }
     
     
