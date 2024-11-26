@@ -15,7 +15,7 @@ public class Problematica2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         int n = 1; // Inicializamos n
+        int n = 1; // Inicializamos n
         int limite = 10; // Cantidad de números en la serie
         int resultado = 0;
 
