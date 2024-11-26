@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package javaapplication6;
+package Problematica1;
 import java.util.Locale;
 import java.util.Scanner;
 /**
  *
  * @author Core i5-Pro
  */
-public class JavaApplication6 {
+public class Problematica1 {
 
     /**
      * @param args the command line arguments
